@@ -6,9 +6,16 @@ import (
 )
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
+   jsonData := []byte(`{
+		"name": "morpheus",
+		"job": "leader"
+	}`)
+
+
   return &events.APIGatewayProxyResponse{
     StatusCode:        200,
-    Body:              "Hello, World!",
+    //Body:              "Hello, World!",
+    Body:              string(jsonData),
   }, nil
 }
 
